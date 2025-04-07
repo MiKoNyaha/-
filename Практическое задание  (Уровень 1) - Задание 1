@@ -1,0 +1,47 @@
+class Stack:
+    def __init__(self, max_size=10):
+        self.max_size = max_size
+        self.stack = [None] * max_size
+        self.top_index = -1
+
+    def push(self, value):
+        if self.is_full():
+            print("Ошибка: Стек переполнен")
+        else:
+            self.top_index += 1
+            self.stack[self.top_index] = value
+            print(f"Добавлен элемент {value}")
+
+    def pop(self):
+        if self.is_empty():
+            print("Ошибка: Стек пуст")
+            return None
+        else:
+            value = self.stack[self.top_index]
+            self.stack[self.top_index] = None
+            self.top_index -= 1
+            print(f"Удалён элемент {value}")
+            return value
+
+    def top(self):
+        if self.is_empty():
+            print("Ошибка: Стек пуст")
+            return None
+        else:
+            return self.stack[self.top_index]
+
+    def is_empty(self):
+        return self.top_index == -1
+
+    def is_full(self):
+        return self.top_index == self.max_size - 1
+
+
+# Пример использования:
+stack = Stack()
+
+stack.push(5)
+stack.push(7)
+print(stack.top())  # Вернёт 7
+stack.pop()         # Удалит 7
+print(stack.top())  # Вернёт 5

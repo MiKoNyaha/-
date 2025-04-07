@@ -1,0 +1,12 @@
+def count_unique_chars(s):
+
+    unique_chars = set(s)  # Множество хранит уникальные символы
+    return len(unique_chars)
+
+
+# Примеры использования
+print(count_unique_chars("hello"))  # Возвращает 4 ('h', 'e', 'l', 'o')
+print(count_unique_chars("abcabc"))  # Возвращает 3 ('a', 'b', 'c')
+print(count_unique_chars("1234567890"))  # Возвращает 10 (цифры от '0' до '9')
+print(count_unique_chars("Apple"))  # Возвращает 4 ('A', 'p', 'l', 'e')
+print(count_unique_chars("qwertyqwertyqwerty"))  # Возвращает 6 ('q', 'w', 'e', 'r', 't', 'y')

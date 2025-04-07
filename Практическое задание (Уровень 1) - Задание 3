@@ -1,0 +1,13 @@
+def filter_greater_than(arr, threshold):
+
+    result = []
+    for num in arr:
+        if num > threshold:
+            result.append(num)
+    return result
+
+# Пример использования
+arr = [1, 5, 8, 3, 10, 12, 20, 100]
+threshold = 10
+filtered_arr = filter_greater_than(arr, threshold)
+print(filtered_arr)  # [12, 20, 100]
